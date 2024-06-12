@@ -1,0 +1,21 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = "postgresql://postgres:mysecretpassword@localhost:5432/postgres"
+}
+
+model Request {
+    id     Int  @id @default(autoincrement())
+    a      Int
+    b      Int
+    answer Int
+    type   Type
+}
+
+enum Type {
+    ADD
+    MUL
+}
